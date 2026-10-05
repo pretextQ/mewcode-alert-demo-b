@@ -1,2 +1,3 @@
 def owner_name(user):
-    return user['profile']['name'].upper()
+    profile = user.get('profile') or {}
+    return (profile.get('name') or '').upper()
